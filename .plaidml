@@ -1,0 +1,7 @@
+{
+    "PLAIDML_DEVICE_IDS":[
+        "metal_intel(r)_iris(tm)_graphics_6100.0"
+    ],
+    "PLAIDML_EXPERIMENTAL":true,
+    "PLAIDML_TELEMETRY":true
+}
