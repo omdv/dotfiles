@@ -27,7 +27,7 @@ alias dps "docker ps -a --format 'table {{.ID}}: {{.Image}}\t\t{{.Names}}\t{{.Po
 alias brewski "brew update; brew upgrade; brew cleanup; brew cask cleanup; brew doctor"
 
 # Improved CLI
-alias cat 'bat'
+alias cat 'bat --style=numbers,changes'
 alias ping 'prettyping --nolegend'
 alias preview "fzf --preview 'bat --color \"always\" {}'"
 alias du 'ncdu --color dark -rr -x --exclude .git --exclude node_modules'
