@@ -22,14 +22,14 @@ source ~/.profile-secrets/secrets.sh
 set -gx BORG_RSH "/Users/om/.backup/borg-bandwidth-limiter.sh ssh"
 
 # Pyenv settings
-set PYENV_ROOT $HOME/.pyenv
-set -x PATH $PYENV_ROOT/shims $PYENV_ROOT/bin $PATH
-pyenv rehash
-status --is-interactive; and source (pyenv init -|psub)
+#set PYENV_ROOT $HOME/.pyenv
+#set -x PATH $PYENV_ROOT/shims $PYENV_ROOT/bin $PATH
+#pyenv rehash
+#status --is-interactive; and source (pyenv init -|psub)
 
 # pyenv virtualenv
-status --is-interactive; and source (pyenv virtualenv-init -|psub)
-set -x VIRTUAL_ENV_DISABLE_PROMPT 1
+#status --is-interactive; and source (pyenv virtualenv-init -|psub)
+#set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 
 # Homebrew
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths

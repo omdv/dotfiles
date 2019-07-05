@@ -21,7 +21,7 @@ alias config '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Docker
 alias dc "docker-compose"
-alias dps "docker ps -a --format 'table {{.ID}}: {{.Image}}\t\t{{.Names}}\t{{.Ports}}\t{{.Status}}'"
+alias dps "docker ps -a --format 'table {{.Image}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}'"
 
 # Homebrew
 alias brewski "brew update; brew upgrade; brew cleanup; brew cask cleanup; brew doctor"
