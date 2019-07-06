@@ -33,11 +33,11 @@ status --is-interactive; and pyenv virtualenv-init - | source
 #set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 
 # Homebrew
-set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
+set -U fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 # Pass settings 
-set -g fish_user_paths "/usr/local/opt/gnu-getopt/bin" $fish_user_paths
-set -g fish_user_paths "/usr/local/opt/gpg-agent/bin" $fish_user_paths
+set -U fish_user_paths "/usr/local/opt/gnu-getopt/bin" $fish_user_paths
+set -U fish_user_paths "/usr/local/opt/gpg-agent/bin" $fish_user_paths
 
 # GOlang
 set -gx GOPATH "/Users/om/Documents/golang"
