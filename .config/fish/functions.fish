@@ -51,6 +51,16 @@ function bip --description "Install brew plugins"
   end
 end
 
+function bic --description "Install brew casks"
+  set -l inst (brew search --casks | eval "fzf $FZF_DEFAULT_OPTS -m --header='[brew:install]'")
+
+  if not test (count $inst) = 0
+    for prog in $inst
+      brew cask install "$prog"
+    end
+  end
+end
+
 function bcp --description "Remove brew plugins"
   set -l inst (brew leaves | eval "fzf $FZF_DEFAULT_OPTS -m --header='[brew:uninstall]'")
 

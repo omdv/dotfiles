@@ -11,9 +11,10 @@ set -gx fish_color_match "red"
 set -gx fish_greeting ''
 
 # fzf settings 
-# set -gx FZF_FIND_FILE_COMMAND 'fd --type file --follow --color=always'
-set -gx FZF_DEFAULT_OPTS           '--height=50% --min-height=15 --reverse'
-set -gx FZF_FIND_FILE_OPTS         "--preview 'bat --color "always" {}'"
+set -U FZF_FIND_FILE_COMMAND      "fd --type f . \$dir"
+set -U FZF_DEFAULT_COMMAND        "fd --type f"
+set -U FZF_DEFAULT_OPTS           "--height=50% --min-height=15 --reverse"
+set -U FZF_FIND_FILE_OPTS         "--preview 'bat {}'"
 
 # source secrets
 source ~/.profile-secrets/secrets.sh
@@ -33,11 +34,11 @@ status --is-interactive; and pyenv virtualenv-init - | source
 #set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 
 # Homebrew
-set -U fish_user_paths "/usr/local/sbin" $fish_user_paths
+#set -U fish_user_paths "/usr/local/sbin" $fish_user_paths
 
-# Pass settings 
-set -U fish_user_paths "/usr/local/opt/gnu-getopt/bin" $fish_user_paths
-set -U fish_user_paths "/usr/local/opt/gpg-agent/bin" $fish_user_paths
+# Pass settings
+#set -U fish_user_paths "/usr/local/opt/gnu-getopt/bin" $fish_user_paths
+#set -U fish_user_paths "/usr/local/opt/gpg-agent/bin" $fish_user_paths
 
 # GOlang
 set -gx GOPATH "/Users/om/Documents/golang"
