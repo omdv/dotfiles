@@ -1,3 +1,7 @@
+# source aliases and functions
+source ~/.config/fish/aliases.fish
+source ~/.config/fish/functions.fish
+
 # openSSL compiler settings
 set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
 set -gx LDFLAGS "-L/usr/local/opt/openssl/lib"
@@ -10,10 +14,6 @@ set -gx fish_greeting ''
 # set -gx FZF_FIND_FILE_COMMAND 'fd --type file --follow --color=always'
 set -gx FZF_DEFAULT_OPTS           '--height=50% --min-height=15 --reverse'
 set -gx FZF_FIND_FILE_OPTS         "--preview 'bat --color "always" {}'"
-
-# source aliases and functions
-source ~/.config/fish/aliases.fish
-source ~/.config/fish/functions.fish
 
 # source secrets
 source ~/.profile-secrets/secrets.sh
@@ -51,8 +51,8 @@ if not functions -q fisher
 end
 
 # NVM
-function nvm
-   bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv
-end
-set -x NVM_DIR ~/.nvm
-nvm use default --silent
+#function nvm
+#   bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv
+#end
+#set -x NVM_DIR ~/.nvm
+#nvm use default --silent
