@@ -8,8 +8,8 @@ set -gx fish_greeting ''
 
 # fzf settings 
 # set -gx FZF_FIND_FILE_COMMAND 'fd --type file --follow --color=always'
-set -gx FZF_FIND_FILE_OPTS "--preview 'bat --color "always" {}'"
-set -gx FZF_DEFAULT_OPTS ''
+set -gx FZF_DEFAULT_OPTS           '--height=50% --min-height=15 --reverse'
+set -gx FZF_FIND_FILE_OPTS         "--preview 'bat --color "always" {}'"
 
 # source aliases and functions
 source ~/.config/fish/aliases.fish
@@ -22,13 +22,14 @@ source ~/.profile-secrets/secrets.sh
 set -gx BORG_RSH "/Users/om/.backup/borg-bandwidth-limiter.sh ssh"
 
 # Pyenv settings
-#set PYENV_ROOT $HOME/.pyenv
-#set -x PATH $PYENV_ROOT/shims $PYENV_ROOT/bin $PATH
-#pyenv rehash
-#status --is-interactive; and source (pyenv init -|psub)
+set PYENV_ROOT $HOME/.pyenv
+set -x PATH $PYENV_ROOT/shims $PYENV_ROOT/bin $PATH
+pyenv rehash
+status --is-interactive; and source (pyenv init -|psub)
 
 # pyenv virtualenv
-#status --is-interactive; and source (pyenv virtualenv-init -|psub)
+status --is-interactive; and pyenv init - | source
+status --is-interactive; and pyenv virtualenv-init - | source
 #set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 
 # Homebrew
@@ -53,6 +54,5 @@ end
 function nvm
    bass source (brew --prefix nvm)/nvm.sh --no-use ';' nvm $argv
 end
-
 set -x NVM_DIR ~/.nvm
 nvm use default --silent
