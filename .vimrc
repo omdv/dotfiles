@@ -17,13 +17,13 @@ Plug 'easymotion/vim-easymotion'
 Plug 'majutsushi/tagbar'
 Plug 'flazz/vim-colorschemes'
 Plug 'bling/vim-bufferline'
-" Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-surround'
 Plug 'lervag/vimtex'
 Plug 'xuhdev/vim-latex-live-preview'
 call plug#end()
 "}}}
 " Filetype {{{
+syntax on
 filetype on
 filetype plugin on
 filetype indent on

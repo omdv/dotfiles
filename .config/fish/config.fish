@@ -2,6 +2,11 @@
 source ~/.config/fish/aliases.fish
 source ~/.config/fish/functions.fish
 
+# Readline {{{
+set -gx LDFLAGS "-L/usr/local/opt/readline/lib"
+set -gx CPPFLAGS "-I/usr/local/opt/readline/include"
+# }}}
+
 # openSSL compiler settings
 set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
 set -gx LDFLAGS "-L/usr/local/opt/openssl/lib"
@@ -25,20 +30,20 @@ set -gx BORG_RSH "/Users/om/.backup/borg-bandwidth-limiter.sh ssh"
 # Pyenv settings
 set PYENV_ROOT $HOME/.pyenv
 set -x PATH $PYENV_ROOT/shims $PYENV_ROOT/bin $PATH
-pyenv rehash
+#pyenv rehash
 status --is-interactive; and source (pyenv init -|psub)
 
 # pyenv virtualenv
-status --is-interactive; and pyenv init - | source
-status --is-interactive; and pyenv virtualenv-init - | source
+#status --is-interactive; and pyenv init - | source
+#status --is-interactive; and pyenv virtualenv-init - | source
 #set -x VIRTUAL_ENV_DISABLE_PROMPT 1
 
 # Homebrew
-#set -U fish_user_paths "/usr/local/sbin" $fish_user_paths
+set -U fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 # Pass settings
-#set -U fish_user_paths "/usr/local/opt/gnu-getopt/bin" $fish_user_paths
-#set -U fish_user_paths "/usr/local/opt/gpg-agent/bin" $fish_user_paths
+set -U fish_user_paths "/usr/local/opt/gnu-getopt/bin" $fish_user_paths
+set -U fish_user_paths "/usr/local/opt/gpg-agent/bin" $fish_user_paths
 
 # GOlang
 set -gx GOPATH "/Users/om/Documents/golang"
