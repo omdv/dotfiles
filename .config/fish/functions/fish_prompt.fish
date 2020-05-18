@@ -17,11 +17,13 @@ function fish_prompt
       if test -n $shell_version
         echo (fst)$shell_version
       else
-        if [ -d "$HOME/.pyenv/version" ]
-          set -l global_version (cat $HOME/.pyenv/version)
+        #if [ -d "$HOME/.pyenv/version" ]
+        #  set -l global_version (cat $HOME/.pyenv/version)
+        #  echo (fst)$global_version
+        if set -q VIRTUAL_ENV
+          set -l global_version (basename "$VIRTUAL_ENV")
           echo (fst)$global_version
         else
-          # set -l global_version "system"
           echo (fst)system
         end
       end

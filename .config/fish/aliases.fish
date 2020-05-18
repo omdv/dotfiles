@@ -16,6 +16,10 @@ alias rmd "rm -rf"
 alias sb "sublime"
 bind \e\e 'prepend_command sudo'
 
+# kubectl
+alias k kubectl
+
+
 # config repository
 alias config '/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
@@ -24,7 +28,7 @@ alias dc "docker-compose"
 alias dps "docker ps -a --format 'table {{.Image}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}'"
 
 # Homebrew
-alias brewski "brew update; brew upgrade; brew cleanup; brew cask cleanup; brew doctor"
+alias brewski "brew update; brew upgrade; brew cleanup; brew doctor"
 
 # Improved CLI
 alias cat 'bat --style=numbers,changes'
